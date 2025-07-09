@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conversor PDF ↔ DOCX</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='image/convert_file.png') }}">
+
+  <!-- Google AdSense -->
+  <script data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <style>
+    /* Container do anúncio menor e centralizado */
+    .ads-container {
+      max-width: 320px; /* largura menor */
+      margin: 10px auto 30px auto; /* espaço acima e abaixo */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Anúncio menor no topo -->
+  <div class="ads-container">
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:320px;height:100px"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1234567890"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <h1>Conversor PDF ↔ DOCX</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div id="messages">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <label for="arquivo_original">Arquivo Original</label>
+    <div id="drop-area" style="border: 2px dashed #ccc; padding: 20px; cursor: pointer; border-radius: 10px; text-align: center; margin-bottom: 15px;">
+      <p>Arraste seu arquivo aqui ou clique para escolher</p>
+      {{ form.arquivo_original(id="arquivo_original", style="display:none;") }}
+    </div>
+    <div id="file-info"></div>
+
+    <p>
+      {{ form.arquivo_gerado.label }}<br>
+      {{ form.arquivo_gerado() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+
+  <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+</html>

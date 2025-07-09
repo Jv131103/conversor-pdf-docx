@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página Não Encontrada</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/hacker-laptop.jpg') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            color: #e74c3c;
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin: 20px 0;
+        }
+
+        a {
+            font-size: 1rem;
+            color: #3498db;
+            text-decoration: none;
+            border: 1px solid #3498db;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        img {
+            width: 400px; /* Aumenta o tamanho da imagem */
+            height: auto;
+            margin: 30px 0; /* Ajusta a margem */
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            a {
+                font-size: 0.9rem;
+            }
+
+            img {
+                width: 250px; /* Tamanho menor da imagem em telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Erro 404 - Página Não Encontrada</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSyK5l9ki_uEKerEUkzg8OlorqjR1xAapxRA&s" alt="Imagem de erro">
+        <p>Desculpe, a página que você procura não existe.</p>
+        <a href="/">Voltar para a página inicial</a>
+    </div>
+</body>
+</html>
