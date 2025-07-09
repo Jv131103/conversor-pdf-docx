@@ -1,6 +1,8 @@
 # Conversor PDF ↔ DOCX
 
-Uma aplicação web simples feita com Flask para converter arquivos entre PDF e DOCX (e ODT → PDF). 
+Uma aplicação web simples feita com Flask para converter arquivos entre PDF e DOCX (e ODT → PDF).
+
+`PS: Ainda vou colocar addsense, mas não vou adicionar no portifólio, certifique-se de colocar a sua caro queira. Também irei subir em servidor com docker`
 
 ## Funcionalidades
 
@@ -72,15 +74,25 @@ Remova informações sensíveis como SECRET_KEY e IDs do Google AdSense antes de
 /
 ├── app.py            # Código principal Flask
 ├── templates/
+|   ├── 404.html
+|   ├── 500.html
 │   └── index.html    # Página HTML com formulário e anúncios
 ├── static/
 │   ├── css/
-│   └── scripts/
+|   |   └── style.css  # Estilo do site
+|   ├── scripts/
+|   |    └── script.js  # JavaScript do site.
+|   └── image/
+|       ├── convert_file.png
+|       └── hacker-laptop.jpg
 ├── utils/
 │   ├── docx_to_pdf.py
 │   ├── pdf_to_docx.py
 │   └── secret.py     # Geração de chaves secretas
+|
 ├── uploads/          # Pasta onde os arquivos são salvos
+├── criar_git.bash  # Apenas para criar o portifólio, pode gerar usando seu usuário
+├── .gitignore
 └── requirements.txt  # Dependências Python
 ```
 
